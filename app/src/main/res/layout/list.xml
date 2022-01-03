@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/backgroundlist"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="30dp">
+            <ImageView
+                android:id="@+id/gambar"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/idproduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Id Laundry"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/namaproduk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama "
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="qty"
+                android:textSize="18sp"
+                android:maxLines="2"
+                />
+            <TextView
+                android:id="@+id/hargaafter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harga Barang"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
