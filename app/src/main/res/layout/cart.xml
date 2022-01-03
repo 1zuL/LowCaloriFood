@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Cart.Cart">
 
+
     <TextView
         android:id="@+id/idOrang"
         android:layout_width="wrap_content"
@@ -87,10 +88,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
-        android:text="Total Harga"
-        android:textSize="20dp"
+        android:text="Total (inc. 10k Ongkir) -"
+        android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/totalHarga"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/orderidd"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

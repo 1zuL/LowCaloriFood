@@ -62,7 +62,7 @@ public class Cart extends AppCompatActivity {
     private String KEY_NAME = "NAMA";
     SessionManager sessionManager;
     String getId;
-    TextView totalharga;
+    TextView totalharga,orderidd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +78,7 @@ public class Cart extends AppCompatActivity {
         idOrang = findViewById(R.id.idOrang);
         idOrang.setText(getId);
         totalharga = findViewById(R.id.totalHarga);
+        orderidd = findViewById(R.id.orderidd);
 
         //swipeRefreshLayout = findViewById(R.id.swipeCart);
 
@@ -103,7 +104,10 @@ public class Cart extends AppCompatActivity {
                                     for (int i = 0; i < jsonArray.length(); i++) {
                                         JSONObject object = jsonArray.getJSONObject(i);
                                         String hargatotal = object.getString("hargatotal").trim();
+                                        String orderid = object.getString("orderidd");
                                         totalharga.setText(hargatotal);
+                                        orderidd.setText(orderid);
+
                                     }
                                 } else {
                                     Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
