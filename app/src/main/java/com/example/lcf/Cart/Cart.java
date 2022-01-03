@@ -167,8 +167,10 @@ public class Cart extends AppCompatActivity {
                         dataModel2.setIdproduk(data.getInt("idproduk"));
                         dataModel2.setNamaproduk(data.getString("namaproduk"));
                         dataModel2.setGambar(data.getString("gambar"));
-                        dataModel2.setHargaafter(data.getInt("hargaafter"));
+                        int harga = data.getInt("hargaafter")*data.getInt("qty");
+                        dataModel2.setHargaafter(harga);
                         dataModel2.setQty(data.getInt("qty"));
+
                         listDataCart.add(dataModel2);
 
                     }
