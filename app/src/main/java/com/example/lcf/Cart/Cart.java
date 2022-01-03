@@ -69,7 +69,7 @@ public class Cart extends AppCompatActivity {
         //linearlayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         //recyclerView.setLayoutManager(linearlayoutManager);
         dataCart();
-      //  totalharga();
+        totalharga();
 
 
 
