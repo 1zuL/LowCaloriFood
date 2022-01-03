@@ -8,15 +8,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +41,7 @@ import com.example.lcf.LoginRegister.Login;
 import com.example.lcf.LoginRegister.VolleyConnection;
 import com.example.lcf.R;
 import com.example.lcf.SessionManager;
+import com.example.lcf.confirmasiCheckout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,10 +65,12 @@ public class Cart extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
     TextView idOrang;
     private String nama;
-    private String KEY_NAME = "NAMA";
+    private String KEY_TOTAL = "TOTAL";
+    private String KEY_ORDER = "ORDER";
     SessionManager sessionManager;
     String getId;
     TextView totalharga,orderidd;
+    Button checkout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +96,31 @@ public class Cart extends AppCompatActivity {
         dataCart();
         TotalHarga();
 
+        checkout = findViewById(R.id.checkout);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try{
+                String orderidd2 = orderidd.getText().toString();
+                String Totalharga2 = totalharga.getText().toString();
+                if (!Totalharga2.equals("10000")) {
+                    Intent intent = new Intent(Cart.this, confirmasiCheckout.class);
+                    intent.putExtra(KEY_TOTAL, Totalharga2);
+                    intent.putExtra(KEY_ORDER, orderidd2);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplication(),"Data Cart Kosong",Toast.LENGTH_SHORT);
+                }
+                } catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(getApplication(), "ERROR, TRY AGAIN !",Toast.LENGTH_SHORT);
+                }
+
+            }
+        });
 
     }
+
     public void TotalHarga() {
         if (checkNetworkConnection()) {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, ALAMAT_DATA_CART_TOTAL,
