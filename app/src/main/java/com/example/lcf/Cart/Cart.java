@@ -130,7 +130,7 @@ public class Cart extends AppCompatActivity {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
                                 String resp = jsonObject.getString("server_response");
-                                JSONArray jsonArray = jsonObject.getJSONArray("login");
+                                JSONArray jsonArray = jsonObject.getJSONArray("data");
                                 if (resp.equals("1")) {
                                     for (int i = 0; i < jsonArray.length(); i++) {
                                         JSONObject object = jsonArray.getJSONObject(i);
