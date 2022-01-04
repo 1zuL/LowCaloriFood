@@ -34,6 +34,7 @@
         <entry key="..\:/Users/chaplin/AndroidStudioProjects/LCF/app/src/main/res/layout/main.xml" value="0.1" />
         <entry key="..\:/Users/chaplin/AndroidStudioProjects/LCF/app/src/main/res/layout/row_mahasiswa.xml" value="0.1" />
         <entry key="..\:/Users/chaplin/AndroidStudioProjects/LCF/app/src/main/res/menu/main_menu.xml" value="0.2" />
+        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/drawable/buton.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_bow.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_bridge.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_cobbler.xml" value="0.161231884057971" />
@@ -49,6 +50,7 @@
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_pauseji.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_plank.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_playji.xml" value="0.161231884057971" />
+        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_register.xml" value="0.15670289855072464" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_second.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_third.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/card_item.xml" value="0.15172101449275363" />
@@ -57,7 +59,9 @@
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/detailproduk.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/header.xml" value="0.15670289855072464" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/list.xml" value="0.15172101449275363" />
+        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/listdaftarorder.xml" value="0.15670289855072464" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/popup.xml" value="0.33" />
+        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/row.xml" value="0.15670289855072464" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/menu/main_menu.xml" value="0.209375" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/menu/search_menu.xml" value="0.209375" />
         <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_confirmasi_checkout.xml" value="0.1793478260869565" />

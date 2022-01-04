@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MenuMakan">
+    tools:context=".Activity.MenuMakan"
+    android:background="#fff">
 
     <TextView
         android:id="@+id/textView7"
@@ -33,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/bgsearch"
+        android:background="@drawable/backgroundsearch"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:paddingLeft="15dp"
@@ -43,12 +44,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_data3"
-        android:layout_width="409dp"
-        android:layout_height="716dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/search_view"
         tools:listitem="@layout/card_item" />
 

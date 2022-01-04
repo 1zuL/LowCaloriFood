@@ -12,7 +12,7 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/purple_500"
+        android:background="#ECA945"
         android:textAlignment="textEnd"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="Yoga App"
@@ -134,7 +134,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@drawable/btn"
+                    android:background="@drawable/button"
                     android:text="GET STARTED"
                     android:textAllCaps="true"
                     android:textColor="#fff"/>
