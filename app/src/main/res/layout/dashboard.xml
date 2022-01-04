@@ -79,11 +79,11 @@
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/slider"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="35dp"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
             app:auto_cycle="true"
             app:corner_radius="30"
             app:delay="0"
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             android:text="Menu"
             android:textSize="25dp"
             android:textStyle="bold"
@@ -116,74 +116,58 @@
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-10dp"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="20dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                <TextView
+                    android:id="@+id/fitnes"
+                    android:layout_width="135dp"
+                    android:layout_height="180dp"
+                    android:background="@drawable/fitt"
                     android:gravity="center"
-                    android:paddingLeft="40dp">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp">
 
-                        <TextView
-                            android:id="@+id/fitnes"
-                            android:layout_width="135dp"
-                            android:layout_height="180dp"
-                            android:layout_marginEnd="20dp"
-                            android:background="@drawable/fitt"
-                            android:gravity="center"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toStartOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/menu"
+                    android:layout_width="135dp"
+                    android:layout_height="180dp"
+                    android:background="@drawable/menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp">
-
-                        <TextView
-                            android:id="@+id/menu"
-                            android:layout_width="135dp"
-                            android:layout_height="180dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/menu"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
+        </LinearLayout>
 
 
-            </HorizontalScrollView>
-        </RelativeLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_data"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             tools:listitem="@layout/card_item" />
