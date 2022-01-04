@@ -35,17 +35,26 @@
         <entry key="..\:/Users/chaplin/AndroidStudioProjects/LCF/app/src/main/res/layout/row_mahasiswa.xml" value="0.1" />
         <entry key="..\:/Users/chaplin/AndroidStudioProjects/LCF/app/src/main/res/menu/main_menu.xml" value="0.2" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_confirmasi_checkout.xml" value="0.25" />
-        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_login.xml" value="0.16576086956521738" />
-        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/activity_menu_makan.xml" value="0.16576086956521738" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/card_item.xml" value="0.15172101449275363" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/cart.xml" value="0.33" />
-        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/dashboard.xml" value="0.161231884057971" />
-        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/detailproduk.xml" value="0.161231884057971" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/list.xml" value="0.15172101449275363" />
         <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/layout/popup.xml" value="0.33" />
-        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/menu/main_menu.xml" value="0.209375" />
-        <entry key="..\:/Users/chaplin/Documents/GitHub/E41200175_Adam Dwi Julianto/LowCaloriFood/app/src/main/res/menu/search_menu.xml" value="0.209375" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/drawable-v24/bgsearch.xml" value="0.22121212121212122" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/drawable-v24/ic_baseline_arrow_forward_ios_24.xml" value="0.22121212121212122" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/drawable/backgroundsearch.xml" value="0.21574074074074073" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/drawable/button.xml" value="0.22121212121212122" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.21574074074074073" />
         <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_confirmasi_checkout.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_food.xml" value="0.21052631578947367" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_food_details.xml" value="0.21052631578947367" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_menu_makan.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_pauseji.xml" value="0.21052631578947367" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_second.xml" value="0.21052631578947367" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/activity_third.xml" value="0.21052631578947367" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/layout/dashboard.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/menu/main_menu.xml" value="0.25" />
+        <entry key="..\:/Users/ozuxe/OneDrive/Dokumen/GitHub/LowCaloriFood/app/src/main/res/menu/menu.xml" value="0.25" />
       </map>
     </option>
   </component>

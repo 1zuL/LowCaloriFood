@@ -29,6 +29,7 @@ import com.example.lcf.Model.DataModel;
 import com.example.lcf.Model.ResponseModel;
 import com.example.lcf.R;
 import com.example.lcf.SessionManager;
+import com.example.lcf.yogiapp.yogi;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView.LayoutManager lmData;
     private List<DataModel> listData = new ArrayList<>();
     SwipeRefreshLayout swipeRefreshLayout;
-    TextView txtHello, menu;
+    TextView txtHello, menu, fitnes;
     private String KEY_NAME = "NAMA";
     SessionManager sessionManager;
     DrawerLayout drawerLayout;
@@ -64,6 +65,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, MenuMakan.class));
+            }
+        });
+
+        fitnes = findViewById(R.id.fitnes);
+        fitnes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, yogi.class));
             }
         });
 

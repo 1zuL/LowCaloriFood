@@ -15,11 +15,26 @@
         android:theme="@style/Theme.LCF"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".yogiapp.ThirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".yogiapp.SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".yogiapp.FoodActivityDetails"
+            android:exported="false" />
+        <activity
+            android:name=".yogiapp.FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".yogiapp.yogi"
+            android:exported="false" />
+        <activity
             android:name=".DaftarOrder.DaftarOrder"
             android:exported="true" />
         <activity
             android:name=".Activity.MenuMakan"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".confirmasiCheckout"
             android:exported="true" />
