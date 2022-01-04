@@ -3,9 +3,12 @@ package com.example.lcf.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -40,13 +43,15 @@ public class MenuMakan extends AppCompatActivity {
         rvData = findViewById(R.id.rv_data3);
         lmData =  new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);
-        retrieveData();
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        retrieveData("");//without keywordberjalan
 
     }
 
-    private void retrieveData() {
+    private void retrieveData(String search) {
         APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ResponseModel> tampilData = ardData.ardRetrieveData2();
+        Call<ResponseModel> tampilData = ardData.search(search);
 
         tampilData.enqueue(new Callback<ResponseModel>() {
             @Override
@@ -71,32 +76,5 @@ public class MenuMakan extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_menu, menu);
-        SearchView searchView = (SearchView) menu.findItem(R.id.item_search).getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-
-                newText = newText.toLowerCase();
-                ArrayList<DataModel> itemFilter = new ArrayList<>();
-                for (DataModel model : listData){
-                    String nama = model.getNamaproduk().toLowerCase();
-                    if (nama.contains(newText)) {
-                        itemFilter.add(model);
-                    }
-                }
-            adData.setFilter(itemFilter);
-                return true;
-            }
-        });
-        return super.onCreateOptionsMenu(menu);
-    }
 }

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +33,7 @@ public class AdapterData extends  RecyclerView.Adapter<AdapterData.HolderData>{
     public AdapterData(Context ctx, List<DataModel> listData) {
         this.ctx = ctx;
         this.listData = listData;
+
 
     }
 
@@ -84,6 +87,9 @@ public class AdapterData extends  RecyclerView.Adapter<AdapterData.HolderData>{
         listData.addAll(filterModel);
         notifyDataSetChanged();
     }
+
+
+
     public  class HolderData extends RecyclerView.ViewHolder{
         TextView tvId,tvNama,tvDesc,tvHarga;
         ImageView tvimage;
