@@ -9,14 +9,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lcf.API.APIRequestData;
 import com.example.lcf.API.RetroServer;
 import com.example.lcf.Adapter.AdapterData;
+import com.example.lcf.Cart.Cart;
 import com.example.lcf.Model.DataModel;
 import com.example.lcf.Model.ResponseModel;
 import com.example.lcf.R;
@@ -35,12 +39,23 @@ public class MenuMakan extends AppCompatActivity {
     private RecyclerView.LayoutManager lmData;
     private List<DataModel> listData = new ArrayList<>();
     SearchView searchView;
+    ImageView gotoCart;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_makan);
+
+        gotoCart = findViewById(R.id.goToCart);
+
+        gotoCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuMakan.this, Cart.class);
+                startActivity(intent);
+            }
+        });
 
         searchView = findViewById(R.id.search_view);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

@@ -21,12 +21,6 @@
             android:name=".yogiapp.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".yogiapp.FoodActivityDetails"
-            android:exported="false" />
-        <activity
-            android:name=".yogiapp.FoodActivity"
-            android:exported="false" />
-        <activity
             android:name=".yogiapp.yogi"
             android:exported="false" />
         <activity

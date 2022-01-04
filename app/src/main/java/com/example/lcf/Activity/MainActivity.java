@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.lcf.API.APIRequestData;
 import com.example.lcf.API.RetroServer;
 import com.example.lcf.Adapter.AdapterData;
@@ -59,6 +61,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
 
+
+        ImageSlider imageSlider = findViewById(R.id.slider);
+        List<SlideModel> slideModels = new ArrayList<>();
+        slideModels.add(new SlideModel("https://www.labmeeting.com/wp-content/uploads/2020/08/calories-600.jpg"));
+        slideModels.add(new SlideModel("https://legionathletics.com/wp-content/uploads/2016/06/healthy-meal.jpg"));
+        slideModels.add(new SlideModel("https://ws-tif.com/lcfp/food_ordering/produk/16ITZ67hFVr6Q.jpeg"));
+        slideModels.add(new SlideModel("https://ws-tif.com/lcfp/food_ordering/produk/16uutR4VGfuF2.jpeg"));
+        slideModels.add(new SlideModel("https://post.greatist.com/wp-content/uploads/2020/09/1931-Low_Calorie_Diets-766x415-thumbnail-732x415.jpg"));
+
+        imageSlider.setImageList(slideModels, true);
 
         menu = findViewById(R.id.menu);
         menu.setOnClickListener(new View.OnClickListener() {

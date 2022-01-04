@@ -40,16 +40,6 @@ public class yogi extends AppCompatActivity {
         Intent intent = new Intent(yogi.this,SecondActivity.class);
         startActivity(intent);
 
-
-
-
     }
 
-    public void food(View view) {
-
-        Intent intent = new Intent(yogi.this,FoodActivity.class);
-        startActivity(intent);
-
-
-    }
 }
