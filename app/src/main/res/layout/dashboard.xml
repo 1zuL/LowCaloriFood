@@ -154,8 +154,7 @@
                         android:layout_height="180dp"
                         android:layout_marginRight="30dp"
                         android:background="@drawable/fitt"
-                        android:gravity="center"
-                        />
+                        android:gravity="center" />
                 </LinearLayout>
 
                 <LinearLayout

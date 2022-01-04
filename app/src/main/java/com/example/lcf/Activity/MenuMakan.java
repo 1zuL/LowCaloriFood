@@ -1,6 +1,6 @@
 package com.example.lcf.Activity;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,7 +37,7 @@ public class MenuMakan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_makan);
 
-        rvData = findViewById(R.id.rv_data);
+        rvData = findViewById(R.id.rv_data3);
         lmData =  new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);
         retrieveData();
@@ -46,7 +46,7 @@ public class MenuMakan extends AppCompatActivity {
 
     private void retrieveData() {
         APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ResponseModel> tampilData = ardData.ardRetrieveData();
+        Call<ResponseModel> tampilData = ardData.ardRetrieveData2();
 
         tampilData.enqueue(new Callback<ResponseModel>() {
             @Override

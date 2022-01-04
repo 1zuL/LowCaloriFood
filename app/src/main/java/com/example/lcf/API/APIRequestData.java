@@ -11,5 +11,8 @@ public interface APIRequestData {
     @GET("retrieve.php")
     Call<ResponseModel> ardRetrieveData();
 
+    @GET("fulldatamakanan.php")
+    Call<ResponseModel> ardRetrieveData2();
+
 }
 
