@@ -1,10 +1,15 @@
 package com.example.lcf.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.Toast;
 
 import com.example.lcf.API.APIRequestData;
 import com.example.lcf.API.RetroServer;
@@ -22,9 +27,10 @@ import retrofit2.Response;
 
 public class MenuMakan extends AppCompatActivity {
     private RecyclerView rvData;
-    private RecyclerView.Adapter adData;
+    AdapterData adData;
     private RecyclerView.LayoutManager lmData;
     private List<DataModel> listData = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +64,39 @@ public class MenuMakan extends AppCompatActivity {
                 rvData.setAdapter(adData);
                 adData.notifyDataSetChanged();
             }
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(MenuMakan.this, "Gagal Menhubungi Server", Toast.LENGTH_SHORT).show();
+            }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+        SearchView searchView = (SearchView) menu.findItem(R.id.item_search).getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                newText = newText.toLowerCase();
+                ArrayList<DataModel> itemFilter = new ArrayList<>();
+                for (DataModel model : listData){
+                    String nama = model.getNamaproduk().toLowerCase();
+                    if (nama.contains(newText)) {
+                        itemFilter.add(model);
+                    }
+                }
+            adData.setFilter(itemFilter);
+                return true;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }

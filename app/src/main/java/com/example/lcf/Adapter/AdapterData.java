@@ -19,6 +19,7 @@ import com.example.lcf.Model.DataModel;
 import com.example.lcf.R;
 import com.example.lcf.detail;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterData extends  RecyclerView.Adapter<AdapterData.HolderData>{
@@ -78,6 +79,11 @@ public class AdapterData extends  RecyclerView.Adapter<AdapterData.HolderData>{
         return listData.size();
     }
 
+    public void setFilter(ArrayList<DataModel> filterModel){
+        listData = new ArrayList<>();
+        listData.addAll(filterModel);
+        notifyDataSetChanged();
+    }
     public  class HolderData extends RecyclerView.ViewHolder{
         TextView tvId,tvNama,tvDesc,tvHarga;
         ImageView tvimage;
@@ -90,5 +96,6 @@ public class AdapterData extends  RecyclerView.Adapter<AdapterData.HolderData>{
             tvHarga = itemView.findViewById(R.id.harga);
             tvimage = (ImageView) itemView.findViewById(R.id.tvGambar);
         }
+
     }
 }

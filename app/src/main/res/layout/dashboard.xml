@@ -155,7 +155,7 @@
                         android:layout_marginRight="30dp"
                         android:background="@drawable/fitt"
                         android:gravity="center"
-                        android:text="Halo" />
+                        />
                 </LinearLayout>
 
                 <LinearLayout
