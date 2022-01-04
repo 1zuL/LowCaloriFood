@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ import com.example.lcf.Activity.MainActivity;
 import com.example.lcf.Adapter.AdapterData;
 import com.example.lcf.Cart.Adapter.AdapterData2;
 import com.example.lcf.Cart.Model.DataModel2;
+import com.example.lcf.DaftarOrder.DaftarOrder;
 import com.example.lcf.LoginRegister.DbContract;
 import com.example.lcf.LoginRegister.Login;
 import com.example.lcf.LoginRegister.VolleyConnection;
@@ -70,7 +72,8 @@ public class Cart extends AppCompatActivity {
     SessionManager sessionManager;
     String getId;
     TextView totalharga,orderidd;
-    Button checkout;
+    Button checkout,gotodaftarorder;
+    ImageView backtodashboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,22 @@ public class Cart extends AppCompatActivity {
         idOrang.setText(getId);
         totalharga = findViewById(R.id.totalHarga);
         orderidd = findViewById(R.id.orderidd);
+        gotodaftarorder = findViewById(R.id.GotoDaftarOrder);
+        gotodaftarorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(Cart.this, DaftarOrder.class);
+                startActivity(intent);
+            }
+        });
+        backtodashboard= findViewById(R.id.backtodashboard);
+        backtodashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(Cart.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //swipeRefreshLayout = findViewById(R.id.swipeCart);
 

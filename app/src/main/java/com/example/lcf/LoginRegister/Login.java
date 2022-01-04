@@ -111,7 +111,7 @@ public class Login extends AppCompatActivity {
                                         startActivity(intent);
                                     }
                                 } else {
-                                    Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Username atau password salah", Toast.LENGTH_SHORT).show();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();

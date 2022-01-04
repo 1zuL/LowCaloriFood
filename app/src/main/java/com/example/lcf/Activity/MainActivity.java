@@ -214,6 +214,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_logout:
                 sessionManager.logout();
                 break;
+            case  R.id.nav_makanan:
+                Intent intent =  new Intent(MainActivity.this,MenuMakan.class);
+                startActivity(intent);
+                break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
