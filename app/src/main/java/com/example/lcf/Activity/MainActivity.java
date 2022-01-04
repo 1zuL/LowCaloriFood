@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView.LayoutManager lmData;
     private List<DataModel> listData = new ArrayList<>();
     SwipeRefreshLayout swipeRefreshLayout;
-    TextView txtHello;
+    TextView txtHello, menu;
     private String KEY_NAME = "NAMA";
     SessionManager sessionManager;
     DrawerLayout drawerLayout;
@@ -57,6 +57,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
+
+
+        menu = findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MenuMakan.class));
+            }
+        });
+
+
+
         txtHello = (TextView) findViewById(R.id.NameAccount);
         //TextView logout = (TextView) findViewById(R.id.logut);
 

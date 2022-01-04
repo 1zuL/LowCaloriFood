@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LCF"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activity.MenuMakan"
+            android:exported="false" />
+        <activity
             android:name=".confirmasiCheckout"
             android:exported="true" />
         <activity
