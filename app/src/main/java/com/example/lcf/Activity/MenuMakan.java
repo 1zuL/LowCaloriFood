@@ -23,6 +23,7 @@ import com.example.lcf.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,12 +34,27 @@ public class MenuMakan extends AppCompatActivity {
     AdapterData adData;
     private RecyclerView.LayoutManager lmData;
     private List<DataModel> listData = new ArrayList<>();
+    SearchView searchView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_makan);
+
+        searchView = findViewById(R.id.search_view);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return true;
+            }
+        });
 
         rvData = findViewById(R.id.rv_data3);
         lmData =  new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -47,6 +63,16 @@ public class MenuMakan extends AppCompatActivity {
         setSupportActionBar(toolbar);
         retrieveData("");//without keywordberjalan
 
+    }
+
+    private void filter(String newText) {
+        List<DataModel> filteredList = new ArrayList<>();
+        for (DataModel item : listData){
+            if(item.getNamaproduk().toLowerCase().contains(newText.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        adData.FilteredList(filteredList);
     }
 
     private void retrieveData(String search) {

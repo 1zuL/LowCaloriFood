@@ -82,9 +82,9 @@ public class AdapterData extends  RecyclerView.Adapter<AdapterData.HolderData>{
         return listData.size();
     }
 
-    public void setFilter(ArrayList<DataModel> filterModel){
+    public void FilteredList(List<DataModel> filteredList) {
         listData = new ArrayList<>();
-        listData.addAll(filterModel);
+        listData = filteredList;
         notifyDataSetChanged();
     }
 
