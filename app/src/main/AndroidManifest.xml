@@ -15,7 +15,7 @@
         android:theme="@style/Theme.LCF"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DaftarOrder"
+            android:name=".DaftarOrder.DaftarOrder"
             android:exported="true" />
         <activity
             android:name=".Activity.MenuMakan"
