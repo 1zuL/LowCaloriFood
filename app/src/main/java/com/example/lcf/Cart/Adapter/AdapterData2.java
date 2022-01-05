@@ -1,6 +1,6 @@
 package com.example.lcf.Cart.Adapter;
 
-import android.app.AlertDialog;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -76,7 +77,7 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
         holder.qty.setText(String.valueOf(dm.getQty()));
         holder.hargaafter.setText(String.valueOf(dm.getHargaafter()));
 
-        Glide.with(ctx).load(helo+dm.getGambar()).thumbnail(0.5f).diskCacheStrategy(DiskCacheStrategy.ALL)
+        Glide.with(ctx).load(helo + dm.getGambar()).thumbnail(0.5f).diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.gambar);
        /* holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,19 +94,33 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
                 ctx.startActivity(intent);
             }
         });*/
-       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.buttondeletecart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sessionManager = new SessionManager(ctx);
-                HashMap<String, String> user = sessionManager.getUserDetail();
-                getId = user.get(sessionManager.ID);
-                int sidproduk = dm.getIdproduk();
-                String sIdAcount = "4";
-                dataCart(sidproduk,sIdAcount);
+                new AlertDialog.Builder(ctx)
+                        .setIcon(R.drawable.lcf)
+                        .setTitle("Low Calory Food")
+                        .setMessage("Apakah kamu yakin Untuk Menghapus Data")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String sidproduk = String.valueOf(dm.getIdproduk());
+                                sessionManager = new SessionManager(ctx);
+                                HashMap<String, String> user = sessionManager.getUserDetail();
+                                getId = user.get(sessionManager.ID);
+                                dataCart(getId,sidproduk);
+                            }
+                        })
+                        .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
             }
-        });*/
+        });
     }
-
     @Override
     public int getItemCount() {
         return listData2.size();
@@ -128,9 +143,9 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
 
         }
     }
-    public void dataCart(int idproduk, String IdAcount) {
+    public void dataCart(String IdAcount, String idproduk) {
         RequestQueue rq = Volley.newRequestQueue(ctx);
-        StringRequest sr = new StringRequest(Request.Method.POST, DELETE,
+        StringRequest sr = new StringRequest(Request.Method.POST, "https://ws-tif.com/lcfp/AplikasiMobileAPI/hapuscart.php",
                 new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response2) {
@@ -141,8 +156,9 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
                     String resp = jsonObject.getString("server_response");
                     if (resp.equals("[{\"status\":\"OK\"}]")) {
                         Toast.makeText(ctx,"Data Terhapus", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(ctx, MainActivity.class);
+                        Intent intent = new Intent(ctx,MainActivity.class);
                         ctx.startActivity(intent);
+                        ((Activity)ctx).finish();
                     }else{
                         Toast.makeText(ctx,"Data Tidak Terhapus", Toast.LENGTH_SHORT).show();
                     }
@@ -162,12 +178,17 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("idproduknya", String.valueOf(idproduk));
-                params.put("id", IdAcount);
+                params.put("userid", IdAcount);
+                params.put("idproduknya",idproduk);
                 return params;
             }
         };
         rq.add(sr);
     }
+    public void Delete(int item){
+        listData2.remove(item);
+        notifyItemRemoved(item);
+    }
+
 
 }
