@@ -1,33 +1,63 @@
 package com.example.lcf.Cart.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.lcf.Activity.MainActivity;
+import com.example.lcf.Cart.Cart;
 import com.example.lcf.Cart.Model.DataModel2;
 import com.example.lcf.R;
+import com.example.lcf.SessionManager;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>{
 
     private Context ctx;
     private List<DataModel2> listData2;
     private String helo = "https://ws-tif.com/lcfp/food_ordering/";
+    private String DELETE = "https://ws-tif.com/lcfp/food_ordering/hapuscart.php";
+    String getId;
+    SessionManager sessionManager;
+
 
     public AdapterData2(Context ctx, List<DataModel2> listData2) {
         this.ctx = ctx;
         this.listData2 = listData2;
 
     }
+
 
     @NonNull
     @Override
@@ -63,7 +93,17 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
                 ctx.startActivity(intent);
             }
         });*/
-
+       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sessionManager = new SessionManager(ctx);
+                HashMap<String, String> user = sessionManager.getUserDetail();
+                getId = user.get(sessionManager.ID);
+                int sidproduk = dm.getIdproduk();
+                String sIdAcount = "4";
+                dataCart(sidproduk,sIdAcount);
+            }
+        });*/
     }
 
     @Override
@@ -74,6 +114,7 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
     public  class HolderData extends RecyclerView.ViewHolder{
         TextView idproduk,namaproduk,qty,hargaafter;
         ImageView gambar;
+        Button buttondeletecart;
 
         public HolderData(@NonNull View itemView) {
             super(itemView);
@@ -83,8 +124,50 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
             qty = itemView.findViewById(R.id.qty);
             hargaafter = itemView.findViewById(R.id.hargaafter);
             gambar = (ImageView) itemView.findViewById(R.id.gambar);
-
+            buttondeletecart = itemView.findViewById(R.id.DeleteCart);
 
         }
     }
+    public void dataCart(int idproduk, String IdAcount) {
+        RequestQueue rq = Volley.newRequestQueue(ctx);
+        StringRequest sr = new StringRequest(Request.Method.POST, DELETE,
+                new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response2) {
+
+                //Toast.makeText(detail.this, response2, Toast.LENGTH_SHORT).show();
+                try {
+                    JSONObject jsonObject = new JSONObject(response2);
+                    String resp = jsonObject.getString("server_response");
+                    if (resp.equals("[{\"status\":\"OK\"}]")) {
+                        Toast.makeText(ctx,"Data Terhapus", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ctx, MainActivity.class);
+                        ctx.startActivity(intent);
+                    }else{
+                        Toast.makeText(ctx,"Data Tidak Terhapus", Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ctx, error.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("idproduknya", String.valueOf(idproduk));
+                params.put("id", IdAcount);
+                return params;
+            }
+        };
+        rq.add(sr);
+    }
+
 }

@@ -79,7 +79,7 @@ public class KonfirmasiOrder extends AppCompatActivity {
                 String sDate = date2.getText().toString();
                 String SidAcount = idakunn.getText().toString();
                 if (!skodeorder.equals("") && !snamapemilik.equals("") && !smetode.equals("") && !sDate.equals("") && !SidAcount.equals("")){
-                    dataCart();
+                    dataOrder();
                 }else{
                     Toast.makeText(KonfirmasiOrder.this,"Ada yang kosong",Toast.LENGTH_SHORT).show();
                 }
@@ -136,7 +136,7 @@ public class KonfirmasiOrder extends AppCompatActivity {
         });
         rq.add(sr);
     }
-    void dataCart() {
+    void dataOrder() {
         RequestQueue rq = Volley.newRequestQueue(this);
         StringRequest sr = new StringRequest(Request.Method.POST, ALAMAT_DATA_KONFORDER, new com.android.volley.Response.Listener<String>() {
             @Override

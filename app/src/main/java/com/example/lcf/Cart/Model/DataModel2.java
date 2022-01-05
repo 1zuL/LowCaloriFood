@@ -2,7 +2,7 @@ package com.example.lcf.Cart.Model;
 
 public class DataModel2 {
     private int idproduk,qty,hargaafter;
-    private String namaproduk,gambar;
+    private String namaproduk,gambar,IdAcount;
 
     public int getIdproduk() {
         return idproduk;
@@ -43,4 +43,5 @@ public class DataModel2 {
     public void setGambar(String gambar) {
         this.gambar = gambar;
     }
+
 }

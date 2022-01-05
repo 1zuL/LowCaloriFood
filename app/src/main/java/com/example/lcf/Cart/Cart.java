@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -38,6 +40,7 @@ import com.example.lcf.Adapter.AdapterData;
 import com.example.lcf.Cart.Adapter.AdapterData2;
 import com.example.lcf.Cart.Model.DataModel2;
 import com.example.lcf.DaftarOrder.DaftarOrder;
+import com.example.lcf.KonfirmasiOrder;
 import com.example.lcf.LoginRegister.DbContract;
 import com.example.lcf.LoginRegister.Login;
 import com.example.lcf.LoginRegister.VolleyConnection;
@@ -64,6 +67,7 @@ public class Cart extends AppCompatActivity {
     DataModel2 dataModel2;
     private String ALAMAT_DATA_CART = "https://ws-tif.com/lcfp/AplikasiMobileAPI/dataCart.php";
     private String ALAMAT_DATA_CART_TOTAL = "https://ws-tif.com/lcfp/AplikasiMobileAPI/hargatotal.php";
+    private String DELETE = "https://ws-tif.com/lcfp/food_ordering/hapuscart.php";
     SwipeRefreshLayout swipeRefreshLayout;
     TextView idOrang;
     private String nama;
@@ -72,7 +76,7 @@ public class Cart extends AppCompatActivity {
     SessionManager sessionManager;
     String getId;
     TextView totalharga,orderidd;
-    Button checkout,gotodaftarorder;
+    Button checkout,gotodaftarorder,deletecart;
     ImageView backtodashboard;
 
     @Override
@@ -106,6 +110,7 @@ public class Cart extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         //swipeRefreshLayout = findViewById(R.id.swipeCart);
 
@@ -221,7 +226,6 @@ public class Cart extends AppCompatActivity {
                         int harga = data.getInt("hargaafter")*data.getInt("qty");
                         dataModel2.setHargaafter(harga);
                         dataModel2.setQty(data.getInt("qty"));
-
                         listDataCart.add(dataModel2);
 
                     }

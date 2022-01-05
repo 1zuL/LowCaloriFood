@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -12,10 +13,12 @@
         android:orientation="horizontal"
         android:background="@drawable/backgroundlist"
         android:gravity="center">
+
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginRight="30dp">
+
             <ImageView
                 android:id="@+id/gambar"
                 android:layout_width="match_parent"
@@ -23,38 +26,57 @@
 
                 />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/idproduk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Id Laundry"
-                android:visibility="gone"/>
+                android:visibility="gone" />
+
             <TextView
                 android:id="@+id/namaproduk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nama "
                 android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/qty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="qty"
-                android:textSize="18sp"
                 android:maxLines="2"
-                />
+                android:text="qty"
+                android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/hargaafter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Harga Barang"
-                android:textSize="18sp"
-                />
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/DeleteCart"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_clear_24" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
