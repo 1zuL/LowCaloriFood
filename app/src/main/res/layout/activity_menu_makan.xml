@@ -7,6 +7,24 @@
     tools:context=".Activity.MenuMakan"
     android:background="#fff">
 
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/backgroudncart"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="172dp" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:srcCompat="@drawable/backgroundwhitecart" />
+
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
@@ -47,10 +65,11 @@
         android:layout_width="match_parent"
         android:layout_height="600dp"
 
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="60dp"
+        android:background="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_view"
+        app:layout_constraintTop_toTopOf="@+id/imageView13"
         tools:listitem="@layout/card_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
