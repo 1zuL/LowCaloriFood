@@ -77,7 +77,11 @@ public class Login extends AppCompatActivity {
                 String sUsername = email.getText().toString();
                 String sPassword = password.getText().toString();
 
-                CheckLogin(sUsername, sPassword);
+                if (sUsername.equals("") && sPassword.equals("")) {
+                    Toast.makeText(Login.this,"username atau password kosong",Toast.LENGTH_SHORT).show();
+                }else{
+                    CheckLogin(sUsername, sPassword);
+                }
             }
         });
         requestQueue = Volley.newRequestQueue(Login.this);

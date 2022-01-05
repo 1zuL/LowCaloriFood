@@ -34,8 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Konfirmasi"
-        android:textStyle="bold"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -151,8 +151,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:textSize="14dp"
         android:text="Tanggal Bayar"
+        android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Metode"
         tools:textStyle="bold" />
