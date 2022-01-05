@@ -1,6 +1,7 @@
 package com.example.lcf.DaftarOrder.AdapterOrder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lcf.DaftarOrder.ModelOrder.DataModelOrder;
+import com.example.lcf.KonfirmasiOrder;
 import com.example.lcf.R;
+import com.example.lcf.detail;
 
 import java.util.List;
 
@@ -40,12 +43,23 @@ public class AdapterDataOrder extends RecyclerView.Adapter<AdapterDataOrder.Hold
 
         holder.count.setText(String.valueOf(dm.getCount()));
         holder.Orderid.setText(dm.getOrderid());
-        holder.status.setText(dm.getStatus());
         holder.tglorder.setText(dm.getTglorder());
         if(!dm.getStatus().equals("Payment")){
             holder.button2.setVisibility(View.GONE);
+            holder.status.setText(dm.getStatus());
+        }else{
+            holder.status.setVisibility(View.GONE);
         }
+        holder.button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(ctx, KonfirmasiOrder.class);
+                intent.putExtra("orderid", dm.getOrderid());
 
+
+                ctx.startActivity(intent);
+            }
+        });
 
     }
 

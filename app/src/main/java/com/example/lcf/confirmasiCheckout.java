@@ -60,7 +60,7 @@ public class confirmasiCheckout extends AppCompatActivity {
                 CreateDataToServer(sOrderid);
 
             }else{
-                Toast.makeText(confirmasiCheckout.this,"Data Tidak Lengkap",Toast.LENGTH_SHORT).show();
+                Toast.makeText(confirmasiCheckout.this,"Data Ada Yang Kosong",Toast.LENGTH_SHORT).show();
             }
         }
     });
