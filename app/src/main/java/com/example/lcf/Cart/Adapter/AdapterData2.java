@@ -48,7 +48,6 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
     private Context ctx;
     private List<DataModel2> listData2;
     private String helo = "https://ws-tif.com/lcfp/food_ordering/";
-    private String DELETE = "https://ws-tif.com/lcfp/food_ordering/hapuscart.php";
     String getId;
     SessionManager sessionManager;
 
@@ -156,7 +155,7 @@ public class AdapterData2 extends  RecyclerView.Adapter<AdapterData2.HolderData>
                     String resp = jsonObject.getString("server_response");
                     if (resp.equals("[{\"status\":\"OK\"}]")) {
                         Toast.makeText(ctx,"Data Terhapus", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(ctx,MainActivity.class);
+                        Intent intent = new Intent(ctx,Cart.class);
                         ctx.startActivity(intent);
                         ((Activity)ctx).finish();
                     }else{
