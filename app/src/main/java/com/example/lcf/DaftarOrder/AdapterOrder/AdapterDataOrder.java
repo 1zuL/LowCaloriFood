@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +42,10 @@ public class AdapterDataOrder extends RecyclerView.Adapter<AdapterDataOrder.Hold
         holder.Orderid.setText(dm.getOrderid());
         holder.status.setText(dm.getStatus());
         holder.tglorder.setText(dm.getTglorder());
+        if(!dm.getStatus().equals("Payment")){
+            holder.button2.setVisibility(View.GONE);
+        }
+
 
     }
 
@@ -51,7 +56,7 @@ public class AdapterDataOrder extends RecyclerView.Adapter<AdapterDataOrder.Hold
 
     public  class HolderData extends RecyclerView.ViewHolder{
         TextView count,Orderid,status,tglorder;
-
+        Button button2;
         public HolderData(@NonNull View itemView) {
             super(itemView);
 
@@ -59,6 +64,8 @@ public class AdapterDataOrder extends RecyclerView.Adapter<AdapterDataOrder.Hold
             Orderid = itemView.findViewById(R.id.Kode_Order);
             status = itemView.findViewById(R.id.status);
             tglorder = itemView.findViewById(R.id.tanggal_order);
+            button2 = itemView.findViewById(R.id.Buttonpembayaran);
+
         }
     }
 }

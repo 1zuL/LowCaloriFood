@@ -37,6 +37,16 @@
             android:gravity="center"
             android:id="@+id/status"/>
 
+        <Button
+            android:id="@+id/Buttonpembayaran"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/button"
+            android:text="Konfirmasi Pembayaran"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"/>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
