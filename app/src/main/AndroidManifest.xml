@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/lcf"
         android:label="Low Calory Food"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"

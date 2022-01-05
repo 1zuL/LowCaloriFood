@@ -127,8 +127,9 @@ public class Cart extends AppCompatActivity {
                     intent.putExtra(KEY_TOTAL, Totalharga2);
                     intent.putExtra(KEY_ORDER, orderidd2);
                     startActivity(intent);
+                    finish();
                 }else{
-                    Toast.makeText(getApplication(),"Data Cart Kosong",Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplication(),"Data Cart Kosong",Toast.LENGTH_SHORT).show();
                 }
                 } catch (Exception e){
                     e.printStackTrace();

@@ -59,6 +59,7 @@ public class confirmasiCheckout extends AppCompatActivity {
             if(!sOrderid.equals("")){
                 CreateDataToServer(sOrderid);
 
+
             }else{
                 Toast.makeText(confirmasiCheckout.this,"Data Ada Yang Kosong",Toast.LENGTH_SHORT).show();
             }
@@ -78,6 +79,7 @@ public class confirmasiCheckout extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Barang berhasil Checkout", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(confirmasiCheckout.this, MainActivity.class);
                                     startActivity(intent);
+                                    finish();
 
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Barang gagal Checkout", Toast.LENGTH_SHORT).show();

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -48,7 +49,7 @@ public class MenuMakan extends AppCompatActivity {
         setContentView(R.layout.activity_menu_makan);
 
         gotoCart = findViewById(R.id.goToCart);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         gotoCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

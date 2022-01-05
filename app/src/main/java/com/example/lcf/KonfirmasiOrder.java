@@ -89,6 +89,7 @@ public class KonfirmasiOrder extends AppCompatActivity {
         getIncomingExtra();
         TotalHarga();
 
+
     }
     private void getIncomingExtra(){
         if(getIntent().hasExtra("orderid")){
@@ -147,6 +148,7 @@ public class KonfirmasiOrder extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Data Order Telah masuk", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(KonfirmasiOrder.this, MainActivity.class);
                         startActivity(intent);
+                        finish();
                     } else {
                         Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
                     }
