@@ -1,9 +1,11 @@
 package com.example.lcf;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
@@ -73,16 +75,33 @@ public class KonfirmasiOrder extends AppCompatActivity {
         kirim2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String skodeorder = koderorder.getText().toString();
-                String snamapemilik = nama.getText().toString();
-                String smetode = metode4.getText().toString();
-                String sDate = date2.getText().toString();
-                String SidAcount = idakunn.getText().toString();
-                if (!skodeorder.equals("") && !snamapemilik.equals("") && !smetode.equals("") && !sDate.equals("") && !SidAcount.equals("")){
-                    dataOrder();
-                }else{
-                    Toast.makeText(KonfirmasiOrder.this,"Ada yang kosong",Toast.LENGTH_SHORT).show();
-                }
+                new AlertDialog.Builder(KonfirmasiOrder.this)
+                        .setIcon(R.drawable.lcf)
+                        .setTitle("Low Calory Food")
+                        .setMessage("Apakah kamu yakin kirim data konfirmasi")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String skodeorder = koderorder.getText().toString();
+                                String snamapemilik = nama.getText().toString();
+                                String smetode = metode4.getText().toString();
+                                String sDate = date2.getText().toString();
+                                String SidAcount = idakunn.getText().toString();
+                                if (!skodeorder.equals("") && !snamapemilik.equals("") && !smetode.equals("") && !sDate.equals("") && !SidAcount.equals("")){
+                                    dataOrder();
+                                }else{
+                                    Toast.makeText(KonfirmasiOrder.this,"Ada yang kosong",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+
 
             }
         });

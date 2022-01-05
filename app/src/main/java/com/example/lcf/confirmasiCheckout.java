@@ -1,8 +1,10 @@
 package com.example.lcf;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
@@ -55,14 +57,31 @@ public class confirmasiCheckout extends AppCompatActivity {
     checkout.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String sOrderid = orderidd.getText().toString();
-            if(!sOrderid.equals("")){
-                CreateDataToServer(sOrderid);
+            new AlertDialog.Builder(confirmasiCheckout.this)
+                    .setIcon(R.drawable.lcf)
+                    .setTitle("Low Calory Food")
+                    .setMessage("Apakah kamu yakin melakukan konfirmasi checkout")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String sOrderid = orderidd.getText().toString();
+                            if(!sOrderid.equals("")){
+                                CreateDataToServer(sOrderid);
 
 
-            }else{
-                Toast.makeText(confirmasiCheckout.this,"Data Ada Yang Kosong",Toast.LENGTH_SHORT).show();
-            }
+                            }else{
+                                Toast.makeText(confirmasiCheckout.this,"Data Ada Yang Kosong",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    })
+                    .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    })
+                    .show();
+
         }
     });
     }

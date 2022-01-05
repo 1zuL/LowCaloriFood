@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="21dp"
-        android:text="Terima kasih, adam telah membeli barang di Low Calory Food"
+        android:text="Terima kasih telah membeli barang di Low Calory Food"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
