@@ -22,12 +22,34 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="21dp"
-        android:text="Terima kasih telah membeli barang di Low Calory Food"
+        android:text="Terima kasih"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NameAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="21dp"
+        android:text=" Name"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="44dp"
+        android:text="Telah Berbelanja diAplikasi Low Calori Food"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toRightOf="@+id/NameAccount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,8 +57,8 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
         android:text="TOTAL HARGA YANG HARUS DIBAYAR SAAT INI"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -57,10 +79,12 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
         android:text="TOTAL HARGA YANG TERTERA DI ATAS SUDAH TERMASUK ONGKOS KIRIM SEBESAR RP10.000 BILA TELAH MELAKUKAN PEMBAYARAN, HARAP KONFIRMASIKAN PEMBAYARAN ANDA."
         android:textSize="10dp"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idhargatotal" />

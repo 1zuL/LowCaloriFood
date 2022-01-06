@@ -36,8 +36,9 @@ public class confirmasiCheckout extends AppCompatActivity {
     private String KEY_TOTAL = "TOTAL";
     private String KEY_ORDER = "ORDER";
     private  String total,orderid;
-    TextView hargaTotal,orderidd;
+    TextView hargaTotal,orderidd, txtHello;
     Button checkout;
+    SessionManager sessionManager;
     private String ALAMAT_DATA_KONFCHECKOUT="https://ws-tif.com/lcfp/AplikasiMobileAPI/checkout.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class confirmasiCheckout extends AppCompatActivity {
         checkout = findViewById(R.id.checkout2);
         orderidd.setText(orderid);
         hargaTotal.setText(total);
+        txtHello = (TextView) findViewById(R.id.NameAccount);
 
     checkout.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -84,6 +86,14 @@ public class confirmasiCheckout extends AppCompatActivity {
 
         }
     });
+
+        sessionManager = new SessionManager(this);
+
+        HashMap<String, String> user =  sessionManager.getUserDetail();
+        String mNama = user.get(sessionManager.NAMALENGKAP);
+        String mID = user.get(sessionManager.ID);
+        txtHello.setText(mNama);
+        sessionManager.checkLogin();
     }
     public void CreateDataToServer(final String orderidd) {
         if (checkNetworkConnection()) {
