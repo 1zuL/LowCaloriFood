@@ -77,7 +77,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:layout_marginBottom="28dp"
-        android:text="totalHarga"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/checkout"
         app:layout_constraintStart_toEndOf="@+id/textView10" />

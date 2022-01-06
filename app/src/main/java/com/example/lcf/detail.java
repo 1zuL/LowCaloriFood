@@ -201,7 +201,7 @@ public class detail extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
-                    params.put("Idproduk", Idproduk);
+                    params.put("idproduk", Idproduk);
                     params.put("quantitynumber", quantitynumber);
                     params.put("idAcount", idAcount);
                     return params;

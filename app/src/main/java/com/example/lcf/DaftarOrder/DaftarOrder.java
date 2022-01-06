@@ -27,6 +27,7 @@ import com.example.lcf.Cart.Cart;
 import com.example.lcf.Cart.Model.DataModel2;
 import com.example.lcf.DaftarOrder.AdapterOrder.AdapterDataOrder;
 import com.example.lcf.DaftarOrder.ModelOrder.DataModelOrder;
+import com.example.lcf.LoginRegister.DbContract;
 import com.example.lcf.LoginRegister.VolleyConnection;
 import com.example.lcf.R;
 import com.example.lcf.SessionManager;
@@ -46,7 +47,7 @@ public class DaftarOrder extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager linearlayoutManager;
     private List<DataModelOrder> listDataCart = new ArrayList<>();
-    private String ALAMAT_DATA_Order = "https://ws-tif.com/lcfp/AplikasiMobileAPI/dataOrder.php";
+
     SessionManager sessionManager;
     DataModelOrder dataModelOrder;
     String getId;
@@ -73,16 +74,14 @@ public class DaftarOrder extends AppCompatActivity {
     }
     void dataCart() {
         RequestQueue rq = Volley.newRequestQueue(this);
-        StringRequest sr = new StringRequest(Request.Method.POST, ALAMAT_DATA_Order, new com.android.volley.Response.Listener<String>() {
+        StringRequest sr = new StringRequest(Request.Method.POST, DbContract.ALAMAT_DATA_Order, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response2) {
 
                 //Toast.makeText(detail.this, response2, Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObject = new JSONObject(response2);
-                    String resp = jsonObject.getString("server_response");
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
-                    if (resp.equals("1")) {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         dataModelOrder = new DataModelOrder();
                         JSONObject data = jsonArray.getJSONObject(i);
@@ -92,7 +91,7 @@ public class DaftarOrder extends AppCompatActivity {
                         dataModelOrder.setCount(data.getInt("count"));
 
                         listDataCart.add(dataModelOrder);
-                    }
+
                     }
                     linearlayoutManager = new LinearLayoutManager(DaftarOrder.this, LinearLayoutManager.VERTICAL, false);
                     recyclerView.setLayoutManager(linearlayoutManager);

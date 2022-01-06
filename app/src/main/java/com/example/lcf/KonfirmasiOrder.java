@@ -81,7 +81,7 @@ public class KonfirmasiOrder extends AppCompatActivity {
                 String sDate = date2.getText().toString();
                 String SidAcount = idakunn.getText().toString();
                 if (!skodeorder.equals("") && !snamapemilik.equals("") && !smetode.equals("") && !sDate.equals("") && !SidAcount.equals("")){
-                    dataOrder();
+
                     new AlertDialog.Builder(KonfirmasiOrder.this)
                             .setIcon(R.drawable.lcf)
                             .setTitle("Low Calory Food")
@@ -89,7 +89,7 @@ public class KonfirmasiOrder extends AppCompatActivity {
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-
+                                    dataOrder();
                                 }
                             })
                             .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -129,20 +129,14 @@ public class KonfirmasiOrder extends AppCompatActivity {
             public void onResponse(String response) {
                     try{
                         JSONObject jsonObject =  new JSONObject(response);
-                        String resp = jsonObject.getString("server_response");
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
-                        if (resp.equals("1")){
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject object = jsonArray.getJSONObject(i);
                                 String metode2 = object.getString("metode").trim();
                                 String norek2 = object.getString("norek");
                                 metode4.setText(metode2);
                                 norek.setText(norek2);
-
                             }
-                        }else{
-                            Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
-                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

@@ -46,15 +46,16 @@
             android:exported="true" />
         <activity
             android:name=".LoginRegister.Login"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
         </activity>
     </application>
 

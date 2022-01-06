@@ -65,7 +65,7 @@ public class Cart extends AppCompatActivity {
     private RecyclerView.LayoutManager linearlayoutManager;
     private List<DataModel2> listDataCart = new ArrayList<>();
     DataModel2 dataModel2;
-    private String ALAMAT_DATA_CART = "https://ws-tif.com/lcfp/AplikasiMobileAPI/dataCart.php";
+
     private String ALAMAT_DATA_CART_TOTAL = "https://ws-tif.com/lcfp/AplikasiMobileAPI/hargatotal.php";
     private String DELETE = "https://ws-tif.com/lcfp/food_ordering/hapuscart.php";
     SwipeRefreshLayout swipeRefreshLayout;
@@ -127,7 +127,7 @@ public class Cart extends AppCompatActivity {
                 try{
                 String orderidd2 = orderidd.getText().toString();
                 String Totalharga2 = totalharga.getText().toString();
-                if (!Totalharga2.equals("10000")) {
+                if (!Totalharga2.equals("")) {
                     Intent intent = new Intent(Cart.this, confirmasiCheckout.class);
                     intent.putExtra(KEY_TOTAL, Totalharga2);
                     intent.putExtra(KEY_ORDER, orderidd2);
@@ -148,15 +148,13 @@ public class Cart extends AppCompatActivity {
 
     public void TotalHarga() {
         if (checkNetworkConnection()) {
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, ALAMAT_DATA_CART_TOTAL,
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, DbContract.ALAMAT_DATA_CART,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
                                 JSONObject jsonObject = new JSONObject(response);
-                                String resp = jsonObject.getString("server_response");
                                 JSONArray jsonArray = jsonObject.getJSONArray("data");
-                                if (resp.equals("1")) {
                                     for (int i = 0; i < jsonArray.length(); i++) {
                                         JSONObject object = jsonArray.getJSONObject(i);
                                         String hargatotal = object.getString("hargatotal").trim();
@@ -165,9 +163,7 @@ public class Cart extends AppCompatActivity {
                                         orderidd.setText(orderid);
 
                                     }
-                                } else {
-                                    Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
-                                }
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -181,7 +177,7 @@ public class Cart extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
-                    params.put("idAcount", idOrang.getText().toString());
+                    params.put("idAcount", getId);
 
                     return params;
                 }
@@ -209,7 +205,7 @@ public class Cart extends AppCompatActivity {
 
     void dataCart() {
         RequestQueue rq = Volley.newRequestQueue(this);
-        StringRequest sr = new StringRequest(Request.Method.POST, ALAMAT_DATA_CART, new com.android.volley.Response.Listener<String>() {
+        StringRequest sr = new StringRequest(Request.Method.POST, DbContract.ALAMAT_DATA_CART, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response2) {
 
