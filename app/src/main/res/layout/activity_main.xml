@@ -8,17 +8,6 @@
     android:orientation="vertical"
     tools:context=".yogiapp.yogi">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#ECA945"
-        android:textAlignment="textEnd"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Yoga App"
-        app:titleTextColor="#fff"
-        android:gravity="end" />
-
 
     <ScrollView
         android:layout_width="fill_parent"

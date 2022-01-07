@@ -128,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });*/
 
-
         //swipeRefreshLayout = findViewById(R.id.swipe_Refresh);
         rvData = findViewById(R.id.rv_data);
         lmData =  new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
