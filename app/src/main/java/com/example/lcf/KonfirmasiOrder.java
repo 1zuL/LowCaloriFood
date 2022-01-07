@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +48,7 @@ public class KonfirmasiOrder extends AppCompatActivity {
     Button kirim2;
     String getId;
     EditText nama;
+    ImageView btnback;
 
     SessionManager sessionManager;
     private String ALAMAT_DATA_NOREK = "https://ws-tif.com/lcfp/AplikasiMobileAPI/rekeninglist.php";
@@ -71,7 +73,15 @@ public class KonfirmasiOrder extends AppCompatActivity {
         String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         date2 = findViewById(R.id.date);
         date2.setText(currentDate);
-
+        btnback = findViewById(R.id.backToDaftarOrder);
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(KonfirmasiOrder.this,DaftarOrder.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         kirim2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
